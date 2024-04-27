@@ -1,4 +1,4 @@
-local textFunctions = require("utilities/textFunctions")
+local textFunctions = require("textFunctions")
 
 while true do
 
