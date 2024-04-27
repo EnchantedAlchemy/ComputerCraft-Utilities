@@ -47,3 +47,5 @@ local function choicePrompt(text, ...)
     end
 
 end
+
+return { clear = clear, prompt = prompt, choicePrompt = choicePrompt }
