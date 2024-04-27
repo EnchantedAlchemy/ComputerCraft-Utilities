@@ -5,7 +5,7 @@ while true do
 
     settings.load(".settings")
 
-    if textFunctions.prompt("Enter a value:", "Edit Setting", "Exit") == 1 then
+    if textFunctions.choicePrompt("Enter a value:", "Edit Setting", "Exit") == 1 then
 
         local edittedSetting = textFunctions.choicePrompt("Which setting would you like to edit?", table.unpack(settings.getNames()))
         print("Current Value: " + settings.get(edittedSetting))
