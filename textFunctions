@@ -1,11 +1,11 @@
 --Functions for simple terminal interaction and user input
 
-function clear()
+local function clear()
     term.clear()
     term.setCursorPos(1,1)
 end
 
-function prompt(text, ...)
+local function prompt(text, ...)
 
     while true do
 
@@ -31,7 +31,7 @@ function prompt(text, ...)
 
 end
 
-function choicePrompt(text, ...)
+local function choicePrompt(text, ...)
 
     while true do
 
