@@ -1,4 +1,5 @@
 local textFunctions = require("textFunctions")
+textFunctions.clear()
 
 while true do
 
@@ -7,10 +8,11 @@ while true do
     if textFunctions.prompt("Enter a value:", "Edit Setting", "Exit") == 1 then
 
         local edittedSetting = textFunctions.choicePrompt("Which setting would you like to edit?", table.unpack(settings.getNames()))
+        print("Current Value: " + settings.get(edittedSetting))
+        local newValue = textFunctions.prompt("What value would you like to give " + edittedSetting + "?")
 
         local function editSetting()
-            print("Current Value: " + settings.get(edittedSetting))
-            settings.set(edittedSetting, textFunctions.prompt("What value would you like to give " + edittedSetting + "?"))
+            settings.set(edittedSetting, newValue)
         end
 
         if pcall(editSetting) then
@@ -23,7 +25,9 @@ while true do
         end
 
     else
+
         break
+
     end
 
 end
