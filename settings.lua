@@ -8,15 +8,15 @@ while true do
     if textFunctions.choicePrompt("Enter a value:", "Edit Setting", "Exit") == 1 then
 
         local edittedSetting = settings.getNames()[textFunctions.choicePrompt("Which setting would you like to edit?", table.unpack(settings.getNames()))]
-        print("Current Value: " + settings.get(edittedSetting))
-        local newValue = textFunctions.prompt("What value would you like to give " + edittedSetting + "?")
+        print("Current Value: " .. settings.get(edittedSetting))
+        local newValue = textFunctions.prompt("What value would you like to give " .. edittedSetting .. "?")
 
         local function editSetting()
             settings.set(edittedSetting, newValue)
         end
 
         if pcall(editSetting) then
-            print("Changed value of " + edittedSetting + ".")
+            print("Changed value of " .. edittedSetting .. ".")
             settings.save(".settings")
             os.sleep(2)
         else
