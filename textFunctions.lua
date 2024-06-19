@@ -11,7 +11,7 @@ local function resetComputer()
     settings.save(".settings")
     for i,v in pairs(fs.list("")) do
         if fs.isReadOnly(v) == false and v ~= "resetComputer" then
-            shell.run("delete" .. v)
+            shell.run("delete " .. v)
         end
     end
     shell.run("delete resetComputer")
