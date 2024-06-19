@@ -15,6 +15,7 @@ local function resetComputer()
         end
     end
     shell.run("delete resetComputer")
+    os.reboot()
     return
 
 end
