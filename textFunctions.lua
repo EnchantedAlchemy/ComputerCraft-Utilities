@@ -9,13 +9,12 @@ local function resetComputer()
 
     settings.clear()
     settings.save(".settings")
-    if fs.exists("main") then
-        shell.run("delete main")
+    for i,v in pairs(fs.list("")) do
+        if fs.isReadOnly(v) == false and v ~= "resetComputer" then
+            shell.run("delete" .. v)
+        end
     end
-    if fs.exists("gitget") then
-        shell.run("delete gitget")
-    end
-    shell.run("delete startup")
+    shell.run("delete resetComputer")
     return
 
 end
