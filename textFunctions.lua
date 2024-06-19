@@ -5,6 +5,21 @@ local function clear()
     term.setCursorPos(1,1)
 end
 
+local function resetComputer()
+
+    settings.clear()
+    settings.save(".settings")
+    if fs.exists("main") then
+        shell.run("delete main")
+    end
+    if fs.exists("gitget") then
+        shell.run("delete gitget")
+    end
+    shell.run("delete startup")
+    return
+
+end
+
 local function prompt(text, ...)
 
     while true do
@@ -48,4 +63,4 @@ local function choicePrompt(text, ...)
 
 end
 
-return { clear = clear, prompt = prompt, choicePrompt = choicePrompt }
+return { clear = clear, resetComputer = resetComputer, prompt = prompt, choicePrompt = choicePrompt }
