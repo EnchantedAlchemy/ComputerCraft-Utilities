@@ -1,8 +1,8 @@
 --Functions for simple terminal interaction and user input
 
 local function clear()
-	term.clear()
-	term.setCursorPos(1,1)
+	--term.clear()
+	--term.setCursorPos(1,1)
 end
 
 local function resetComputer()
@@ -41,7 +41,7 @@ local function prompt(text, ...)
 		term.setTextColor(colors.white)
 
 		if input == nil or input == "" then
-			clear()
+			--clear()
 			printError("Enter a valid input.")
 		else
 			return input
@@ -61,7 +61,7 @@ local function choicePrompt(text, ...)
 		print(table.unpack(arg))
 
 		if input == nil or arg[input] == nil then
-			clear()
+			--clear()
 			printError("Enter a valid input.")
 		else
 			return input
