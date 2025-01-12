@@ -56,6 +56,9 @@ local function choicePrompt(text, ...)
 	while true do
 
 		input = tonumber(prompt(text, table.unpack(arg)))
+		print(input)
+		print(arg)
+		print(table.unpack(arg))
 
 		if input == nil or arg[input] == nil then
 			clear()
