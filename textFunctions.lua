@@ -60,6 +60,10 @@ local function choicePrompt(text, ...)
 		print(arg)
 		print(arg[1])
 		print(arg[2])
+		for i,v in ipairs(arg) do
+			print(i)
+			print(v)
+		end
 		print(table.unpack(arg))
 
 		if input == nil or arg[input] == nil then
