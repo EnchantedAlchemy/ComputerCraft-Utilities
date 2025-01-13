@@ -32,8 +32,10 @@ local function prompt(text, args)
 		term.setTextColor(colors.white)
 		print(text)
 
-		for i,v in ipairs(args) do
-			print("(" .. i .. ") " .. v)
+		if args then
+			for i,v in ipairs(args) do
+				print("(" .. i .. ") " .. v)
+			end
 		end
 
 		term.setTextColor(colors.yellow)
