@@ -25,14 +25,14 @@ function round(x)
 end
   
 
-local function prompt(text, ...)
+local function prompt(text, args)
 
 	while true do
 
 		term.setTextColor(colors.white)
 		print(text)
 
-		for i,v in ipairs(arg) do
+		for i,v in ipairs(args) do
 			print("(" .. i .. ") " .. v)
 		end
 
@@ -51,13 +51,13 @@ local function prompt(text, ...)
 
 end
 
-local function choicePrompt(text, ...)
+local function choicePrompt(text, args)
 
 	while true do
 
-		input = tonumber(prompt(text, table.unpack(arg)))
+		input = tonumber(prompt(text, args))
 
-		if input == nil or arg[input] == nil then
+		if input == nil or args[input] == nil then
 			clear()
 			printError("Enter a valid input.")
 		else
