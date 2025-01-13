@@ -58,6 +58,8 @@ local function choicePrompt(text, ...)
 		input = tonumber(prompt(text, table.unpack(arg)))
 		print(input)
 		print(arg)
+		print(arg[1])
+		print(arg[2])
 		print(table.unpack(arg))
 
 		if input == nil or arg[input] == nil then
