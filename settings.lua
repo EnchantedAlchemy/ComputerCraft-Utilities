@@ -2,6 +2,7 @@ local textFunctions = require("textFunctions")
 textFunctions.clear()
 
 --Test Comment
+--Another Comment
 
 while true do
 
