@@ -1,6 +1,8 @@
 local textFunctions = require("textFunctions")
 textFunctions.clear()
 
+--Test Comment
+
 while true do
 
     settings.load(".settings")
